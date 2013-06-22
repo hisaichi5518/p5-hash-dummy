@@ -55,28 +55,11 @@ Hash::Dummy - create dummy hash
 
 =head1 SYNOPSIS
 
-    use Hash::Dummy qw(create_dummy);
-
-    my %hash = create_dummy_hash(
-        id   => {
-            type  => "Int",
-            array => [1..150],
-        },
-        name => {
-            type  => "Hiragana",
-            size  => 15,
-            array => ["あ".."ん", "a".."z", "A".."Z", 0..9],
-        },
-        nick => "hisaichi5518",
-    );
-
-=head1 DESCRIPTION
-
-Hash::Dummy create dummy hash.
-
-=head1 FUNCTIONS
-
-=head2 C<< create_dummy_hash(%hash) >>
+    use strict;
+    use warnings;
+    use utf8;
+    use Data::Dumper;
+    use Hash::Dummy qw(create_dummy_hash);
 
     my %hash = create_dummy_hash(
         id   => {
@@ -91,8 +74,17 @@ Hash::Dummy create dummy hash.
         nick => "hisaichi5518",
     );
 
-    use Data::Dumper;
-    warn Dumper %hash
+    warn Dumper \%hash;
+
+=head1 DESCRIPTION
+
+Hash::Dummy create dummy hash.
+
+=head1 FUNCTIONS
+
+=head2 C<< create_dummy_hash(%hash) >>
+
+See SYNOPSIS
 
 =head1 LICENSE
 
@@ -103,7 +95,7 @@ it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
-hisaichi5518 E<lt>hisaichi5518@gmail.comE<gt>
+hisaichi5518 E<lt>hisada.kazuki@gmail.comE<gt>
 
 =cut
 
